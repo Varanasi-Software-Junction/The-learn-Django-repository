@@ -34,7 +34,7 @@ def authenticateuser(request):
 
 
 def dologout(request):
-    # return logout(request)
+    logout(request)
     return HttpResponse("Logout")
 
 
