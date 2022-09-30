@@ -1,11 +1,17 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from django.core import serializers
 from django.shortcuts import HttpResponse
+from django.http import JsonResponse
+from .models import BooksModel
 
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Book Home")
+    print(BooksModel.objects.all())
+    output = serializers.serialize("json", BooksModel.objects.all())
+    # return JsonResponse(output,safe=False)
+    return HttpResponse(output, content_type="application/json")
 
 
 def createUser(request):
