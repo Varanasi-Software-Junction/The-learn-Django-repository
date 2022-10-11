@@ -3,10 +3,15 @@ from django.contrib.auth.models import User
 from django.core import serializers
 from django.shortcuts import HttpResponse
 from django.http import JsonResponse
+from .forms import StudentForm
 from .models import BooksModel
-
+from django.shortcuts import render
 
 # Create your views here.
+
+def studentview(request):
+    return render(request, "student.html", {"form": StudentForm()})
+
 def index(request):
     print(BooksModel.objects.all())
     output = serializers.serialize("json", BooksModel.objects.all())
