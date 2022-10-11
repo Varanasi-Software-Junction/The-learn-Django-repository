@@ -23,5 +23,16 @@
     {{ form.as_ul }}
     <input type="submit" value="Submit">
 </form>
+<form method="post">
+    {% csrf_token %}
+    <h1>Manual Form </h1>
+    <label>Name</label>
+    {{form.name}}
+    <br>
+    <label>Roll No</label>
+    {{form.rollno}}
+    <br>
+    <input type="submit" value="Submit">
+</form>
 </body>
 </html>
