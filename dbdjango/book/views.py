@@ -11,6 +11,12 @@ from .models import BooksModel
 # Create your views here.
 
 def bookform(request):
+    if request.POST:
+        newbook = BookForm(request.POST)
+        if newbook.is_valid():
+            newbook.save(commit=False)
+            newbook.save()
+            return HttpResponse("Book Saved")
     return render(request, "book.html", {"form": BookForm()})
 
 

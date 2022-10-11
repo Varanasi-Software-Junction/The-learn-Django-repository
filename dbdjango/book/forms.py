@@ -13,3 +13,5 @@ class BookForm(ModelForm):
 class StudentForm(forms.Form):
     name = forms.CharField(max_length=200)
     rollno = forms.IntegerField()
+    # last_modified = models.DateTimeField(auto_now_add = True)
+    # img = models.ImageField(upload_to = "images/"
