@@ -17,11 +17,13 @@ def bookform(request):
             newbook.save(commit=False)
             newbook.save()
             return HttpResponse("Book Saved")
-    return render(request, "book.html", {"form": BookForm()})
+    initial = {"bookname": "Recursion", "subject": "Recursion", "price": 100}
+    return render(request, "book.html", {"form": BookForm(initial=initial)})
 
 
 def studentview(request):
-    return render(request, "student.html", {"form": StudentForm()})
+    initial = {"name": "Popat", "rollno": "101"}
+    return render(request, "student.html", {"form": StudentForm(initial=initial)})
 
 
 def index(request):

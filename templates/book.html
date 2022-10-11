@@ -2,24 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student Form</title>
+    <title>Book Form</title>
 </head>
 <body>
 <form method="post">
     {% csrf_token %}
-    <h1>Form  Table </h1>
+    <h1>Form Div </h1>
+    {{ form.as_div }}
+    <input type="submit" value="Submit">
+</form>
+<form method="post">
+    {% csrf_token %}
+    <h1>Form Table </h1>
     {{ form.as_table }}
     <input type="submit" value="Submit">
 </form>
 <form method="post">
     {% csrf_token %}
-    <h1>Form  Paragraph </h1>
+    <h1>Form Paragraph </h1>
     {{ form.as_p }}
     <input type="submit" value="Submit">
 </form>
 <form method="post">
     {% csrf_token %}
-    <h1>Form  UL </h1>
+    <h1>Form UL </h1>
     {{ form.as_ul }}
     <input type="submit" value="Submit">
 </form>
