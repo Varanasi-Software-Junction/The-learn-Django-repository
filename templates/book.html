@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Form</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <h1>Form  Table </h1>
+    {{ form.as_table }}
+    <input type="submit" value="Submit">
+</form>
+<form method="post">
+    {% csrf_token %}
+    <h1>Form  Paragraph </h1>
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+<form method="post">
+    {% csrf_token %}
+    <h1>Form  UL </h1>
+    {{ form.as_ul }}
+    <input type="submit" value="Submit">
+</form>
+<form method="post">
+    {% csrf_token %}
+    <h1>Manual Form </h1>
+    <label>Name</label>
+    {{form.bookname}}
+    <br>
+    <label>Subject</label>
+    {{form.subject}}
+    <br>
+    <label>Price</label>
+    {{form.price}}
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

@@ -2,15 +2,21 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.core import serializers
 from django.shortcuts import HttpResponse
-from django.http import JsonResponse
-from .forms import StudentForm
-from .models import BooksModel
 from django.shortcuts import render
+
+from .forms import StudentForm, BookForm
+from .models import BooksModel
+
 
 # Create your views here.
 
+def bookform(request):
+    return render(request, "book.html", {"form": BookForm()})
+
+
 def studentview(request):
     return render(request, "student.html", {"form": StudentForm()})
+
 
 def index(request):
     print(BooksModel.objects.all())
