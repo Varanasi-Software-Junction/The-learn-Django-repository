@@ -1,5 +1,5 @@
 from django import forms
-from django.forms import ModelForm
+from django.forms import ModelForm, TextInput
 
 from .models import BooksModel
 
@@ -7,7 +7,14 @@ from .models import BooksModel
 class BookForm(ModelForm):
     class Meta:
         model = BooksModel
-        fields = fields = '__all__'
+        # fields = fields = '__all__'
+        fields = ['bookname', 'subject', 'price']
+        widgets = {
+            'bookname': TextInput(attrs={
+                'class': "form-control",
+
+                'placeholder': 'Book Name'
+            })}
 
 
 class StudentForm(forms.Form):
